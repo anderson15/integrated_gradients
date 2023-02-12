@@ -1,7 +1,7 @@
 # Integrated Gradients
 This repository provides code for computing integrated gradients (IGs), a method for explaining the output of machine learning models ([Sundararajan, Taly, & Yan, 2017](https://arxiv.org/abs/1703.01365)).
 
-In addition to standard integrated gradients, I provide code for computing IGs using non-differentiable functions. I call this the **discrete integrated gradient** approach. The code I provide is for XGBoost and EvoTrees, but it's easily altered for any machine learning model. It only requires that you can evaluate the function, there is no need to supply a gradient. 
+In addition to standard integrated gradients, I provide code for computing them for non-differentiable functions. I call this the **discrete integrated gradient** approach. The code I provide is for XGBoost and EvoTrees, but it's easily altered for any machine learning model. It only requires that you can evaluate the function, there is no need to supply a gradient. 
 
 This repository includes code for the:
 
