@@ -12,7 +12,7 @@ This repository includes code for the:
   * Discrete integrated gradients for [EvoTrees.jl](https://github.com/Evovest/EvoTrees.jl) and [XGBoost.jl](https://github.com/dmlc/XGBoost.jl)
   * Regular integrated gradients for [Flux.jl](https://github.com/FluxML/Flux.jl)
 
-For both the discrete and regular methods, the only hyperparameter is the number of steps to use when approximating the integral. You might start with 100 then use more steps if you need more accuracy and fewer if you need more speed.
+For both the discrete and regular methods, the only hyperparameter is the number of steps to use when approximating the integral. You might start with 100, then use more steps if you need more accuracy and fewer if you need more speed.
 
 I demonstrate the use of integrated gradients in the **example** files. The files called **test** compare the discrete integrated gradient to analytically computed line integrals. Use it to see how the discrete approximation converges to the analytical solution as the number of steps increases.
 
