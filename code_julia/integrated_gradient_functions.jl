@@ -62,7 +62,6 @@ function discrete_ig(start_pt, end_pt, steps, model, model_type)
     if model_type == "analytic"
         y_hat = model(dat)
     end
-
     if model_type == "flux"
         dat = permutedims(dat);
         y_hat = model(dat)
