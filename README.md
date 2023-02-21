@@ -3,6 +3,8 @@ This repository provides code for computing integrated gradients, a method for e
 
 In addition to standard integrated gradients, I provide code for computing them for non-differentiable functions. I call this the **discrete integrated gradient** approach. The code I provide is for XGBoost and EvoTrees, but it's easily altered for any machine learning model. It only requires that you can evaluate the function, there is no need to supply a gradient. 
 
+Other sources provide integrated gradients code for deep neural networks, e.g., [ankurtaly](https://github.com/ankurtaly/Integrated-Gradients) and [TensorFlow core](https://www.tensorflow.org/tutorials/interpretability/integrated_gradients). However, this repository is unique (to my knowledge) in that the code here is intended for use with traditional "tabular" data (rows and columns) rather than data derived from images, audio, or text.
+
 This repository includes code for the:
 
 * Python language:
