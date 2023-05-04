@@ -20,7 +20,7 @@ I demonstrate the use of integrated gradients in the **example** files. The file
 
 The code is released under the MIT license.
 
-If you publish work using this code, please cite this article (obviously this is just a placeholder for now):
+If you publish work using this code, please cite this [article in Neural Computing and Applications:](https://doi.org/10.1007/s00521-023-08597-8)
 ```
 % BibTeX:
 @article{anderson_ig_2023,
