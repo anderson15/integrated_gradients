@@ -22,7 +22,7 @@ The code is released under the MIT license.
 
 If you publish work using this code, please cite this [article in Neural Computing and Applications:](https://doi.org/10.1007/s00521-023-08597-8)
 ```
-% BibTeX:
+BibTeX format:
 @article{anderson_ig_2023,
   author   = {Anderson, Andrew A.},
   journal  = {Neural Computing and Applications},
@@ -35,7 +35,7 @@ If you publish work using this code, please cite this [article in Neural Computi
   url      = {https://doi.org/10.1007/s00521-023-08597-8},
 }
 
-$ RIS:
+RIS format:
 TY  - JOUR
 AU  - Anderson, Andrew A.
 PY  - 2023
