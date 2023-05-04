@@ -24,9 +24,27 @@ If you publish work using this code, please cite this article (obviously this is
 ```
 % BibTeX:
 @article{anderson_ig_2023,
-  author  = {Andrew A. Anderson},
-  journal = {TBD (under review)},
-  title   = {Testing Machine Learning Explanation Methods},
-  year    = {2023},
+  author   = {Anderson, Andrew A.},
+  journal  = {Neural Computing and Applications},
+  title    = {Testing machine learning explanation methods},
+  year     = {2023},
+  issn     = {1433-3058},
+  month    = {May},
+   doi     = {10.1007/s00521-023-08597-8},
+  refid    = {Anderson2023},
+  url      = {https://doi.org/10.1007/s00521-023-08597-8},
 }
+
+$ RIS:
+TY  - JOUR
+AU  - Anderson, Andrew A.
+PY  - 2023
+DA  - 2023/05/04
+TI  - Testing machine learning explanation methods
+JO  - Neural Computing and Applications
+SN  - 1433-3058
+UR  - https://doi.org/10.1007/s00521-023-08597-8
+DO  - 10.1007/s00521-023-08597-8
+ID  - Anderson2023
+ER  - 
 ```
