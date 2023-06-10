@@ -1,9 +1,7 @@
 # Integrated Gradients
 This repository provides code for computing integrated gradients, a method for explaining the output of machine learning models ([Sundararajan, Taly, & Yan, 2017](https://arxiv.org/abs/1703.01365)).
 
-In addition to standard integrated gradients, I provide code for computing them for non-differentiable functions. I call this the **discrete integrated gradient** approach. The code I provide is for XGBoost and EvoTrees, but it's easily altered for any machine learning model. It only requires that you can evaluate the function, there is no need to supply a gradient. 
-
-Other sources provide integrated gradients code for deep neural networks, e.g., [ankurtaly](https://github.com/ankurtaly/Integrated-Gradients) and [TensorFlow core](https://www.tensorflow.org/tutorials/interpretability/integrated_gradients). However, this repository is unique (to my knowledge) in that the code here is intended for use with traditional "tabular" data (rows and columns) rather than data derived from images, audio, or text.
+The unique feature of this code is that it allows computing integrated "gradients" for non-differentiable functions, e.g., XGBoost models. The method only requires function evaluations; there is no need to supply a gradient. I call this the **discrete integrated gradient** method. In addition, this repository provides code for standard integrated gradients, i.e., for differentiable functions such as neural networks. Other options for the standard method include: [ankurtaly](https://github.com/ankurtaly/Integrated-Gradients) and [TensorFlow core](https://www.tensorflow.org/tutorials/interpretability/integrated_gradients). 
 
 This repository includes code for the:
 
@@ -14,13 +12,13 @@ This repository includes code for the:
   * Discrete integrated gradients for [EvoTrees.jl](https://github.com/Evovest/EvoTrees.jl) and [XGBoost.jl](https://github.com/dmlc/XGBoost.jl)
   * Standard integrated gradients for [Flux.jl](https://github.com/FluxML/Flux.jl)
 
-For both the discrete and standard methods, the only hyperparameter is the number of steps to use when approximating the integral. You might start with 100, then use more steps if you need more accuracy and fewer if you need more speed.
+The code can be easily altered for any programming language or machine learning model. The **example** files in this repository demonstrate the use of the code. 
 
-I demonstrate the use of integrated gradients in the **example** files. The files called **test** compare the discrete integrated gradient to analytically computed line integrals. Use it to see how the discrete approximation converges to the analytical solution as the number of steps increases.
+For both the discrete and standard methods, the only **hyperparameter** is the number of steps for approximating the integral. You might start with 100, then use more steps if you need more accuracy and fewer if you need more speed. The files called **test** compare the discrete integrated gradient to analytically computed line integrals. You can use the test files to see how the discrete approximation converges to the analytical solution as the number of steps increases.
 
 The code is released under the MIT license.
 
-If you publish work using this code, please cite this [article in Neural Computing and Applications:](https://doi.org/10.1007/s00521-023-08597-8)
+If you publish work using this code, please cite this [article in Neural Computing and Applications:](https://doi.org/10.1007/s00521-023-08597-8). If you don't have access to that journal, please see this [open-access, view-only version]( https://rdcu.be/dbo4S). 
 ```
 BibTeX format:
 @article{Anderson2023,
