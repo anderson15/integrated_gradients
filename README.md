@@ -1,7 +1,7 @@
 # Integrated Gradients
-This repository provides code for computing integrated gradients, a method for explaining the output of machine learning models ([Sundararajan, Taly, & Yan, 2017](https://arxiv.org/abs/1703.01365)).
+This repository provides code for computing integrated gradients, a method for explaining the output of machine learning models ([Sundararajan, Taly, & Yan, 2017](https://arxiv.org/abs/1703.01365)). The benefit of the integrated gradients method is that it allows users to investigate why a model produces different outputs for two specific input examples. Other local explanation methods typically compare the example of interest with some fixed baseline.
 
-The unique feature of this code is that it allows computing integrated "gradients" for non-differentiable functions, e.g., XGBoost models. The method only requires function evaluations; there is no need to supply a gradient. I call this the **discrete integrated gradient** method. In addition, this repository provides code for standard integrated gradients, i.e., for differentiable functions such as neural networks. Other options for the standard method include: [ankurtaly](https://github.com/ankurtaly/Integrated-Gradients) and [TensorFlow core](https://www.tensorflow.org/tutorials/interpretability/integrated_gradients). 
+The unique feature of the code in this repository is that it allows computing integrated "gradients" for non-differentiable functions, e.g., XGBoost models. The method only requires function evaluations. There is no need to supply a gradient. I call this the **discrete integrated gradient** method. In addition, this repository provides code for standard integrated gradients, i.e., for differentiable functions such as neural networks. Other options for the standard method include: [ankurtaly](https://github.com/ankurtaly/Integrated-Gradients) and [TensorFlow core](https://www.tensorflow.org/tutorials/interpretability/integrated_gradients). 
 
 If you publish work using this code, please cite this [article in Neural Computing and Applications](https://doi.org/10.1007/s00521-023-08597-8). If you don't have access to that journal, please see this [open-access, view-only version]( https://rdcu.be/dbo4S). The citation in BibTeX and RIS formats is provided at the bottom of this page.
 
@@ -64,10 +64,11 @@ y\text{-component} &=\frac{1}{2}(4-2)\left(1+3\right)=4
 As expected, the sum of the two components is equal to the function's total change. The components show that the $x$ variable is the more important factor when moving from $(1,2)$ to $(3,4)$.
 
 ## Method for Non-Differentiable Functions
-The idea behind the discrete integrated gradient method is to define a series of points along a vector from the starting point to the end point. At each point along the path, and for each feature, move that feature one step toward the end point while keeping all other features fixed and record the change in the model's prediction. The sum of these changes constitutes the "integrated gradient" for each feature. 
+The idea behind the discrete integrated gradient method is to define a series of points along a vector from the starting point to the end point. At each point along the path, and for each feature, move that feature one step toward the end point while keeping all other features fixed and record the change in the model's prediction. The sum of these changes constitutes the "integrated gradient" for each feature.
 
-The standard method of integrated gradients uses the actual gradient but approximates the integral. However, since the gradient is undefined for non-differentiable functions, the discrete integrated gradient method approximates both the gradient and the integral.
-Note that more sophisticated finite difference methods are not required (and would provide no benefit). Since we're focused on non-differentiable functions, infinitesimal changes in input variables are generally not associated with any change in the function value.
+More sophisticated finite difference methods are not required (and would generally provide no benefit). Since we're focused on non-differentiable functions, infinitesimal changes in input variables will typically not be associated with any change in the function value.
+
+Users of the code should be aware of the following approximations. The standard method of integrated gradients uses the actual gradient but approximates the integral. But since the gradient is undefined for non-differentiable functions, the discrete integrated gradient method approximates both the gradient and the integral. Thus, **users should conduct testing if a certain level of precision is needed** (one thing to check is how close the sum of the components is to the difference in function values).
 
 ## Citation
 ```
