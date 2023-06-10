@@ -49,7 +49,7 @@ Integrate and simplify to get:
 ```math
 \begin{align*}
 x\text{-component} &=(c-a)\left(a+\frac{b}{2}+c+\frac{d}{2}+1\right) \\
-y\text{-component} &=(d-b)\left(a+\frac{1}{2}\left(c-a\right)\right)
+y\text{-component} &=\frac{1}{2}(d-b)\left(a+c\right) \\
 \end{align*}
 ```
 These formulas show how much of the function's total change can be attributed to the change in $x$ versus the change in $y$. 
@@ -58,7 +58,7 @@ Suppose we are integrating from the point $(1,2)$ to the point $(3,4)$. The func
 ```math
 \begin{align*}
 x\text{-component} &=(3-1)\left(1+\frac{2}{2}+3+\frac{4}{2}+1\right)=16 \\
-y\text{-component} &=(4-2)\left(1+\frac{1}{2}(3-1)\right)=4
+y\text{-component} &=\frac{1}{2}(4-2)\left(1+3\right)=4
 \end{align*}
 ```
 As expected, the sum of the two components is equal to the function's total change. The components show that the $x$ variable is the more important factor when moving from $(1,2)$ to $(3,4)$.
