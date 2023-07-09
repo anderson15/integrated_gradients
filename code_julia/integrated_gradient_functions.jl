@@ -5,6 +5,8 @@
 #  EvoTrees 0.14.8
 #  Flux 0.13.12
 
+using Statistics # for mean()
+
 function integrated_gradients(start_pt, end_pt, steps, grad_func)
     dif = end_pt - start_pt
     num_k = length(start_pt)
