@@ -3,7 +3,7 @@ This repository provides code for computing integrated gradients, a method for e
 
 The unique feature of the code in this repository is that it allows computing integrated "gradients" for non-differentiable functions, e.g., XGBoost models. The method only requires function evaluations. There is no need to supply a gradient. I call this the **discrete integrated gradient** method. In addition, this repository provides code for standard integrated gradients, i.e., for differentiable functions such as neural networks. Other options for the standard method include: [ankurtaly](https://github.com/ankurtaly/Integrated-Gradients) and [TensorFlow core](https://www.tensorflow.org/tutorials/interpretability/integrated_gradients). 
 
-If you publish work using this code, please cite this [article in Neural Computing and Applications](https://rdcu.be/dbo4S). The citation in BibTeX and RIS formats is provided at the bottom of this page.
+If you publish work using this code, please cite this [article in Neural Computing and Applications](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4438372). The citation in BibTeX and RIS formats is provided at the bottom of this page.
 
 ## Description of Code
 This repository includes code for the:
