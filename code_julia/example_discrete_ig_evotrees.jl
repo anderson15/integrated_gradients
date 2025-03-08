@@ -1,11 +1,12 @@
 
 # Illustrating the use of discrete integrated gradients using Titanic data and EvoTrees.
 
-# Developed using Julia 1.8.5, and EvoTrees 0.14.8.
+# Runs using Julia 1.11.3, and EvoTrees 0.17.0.
 
 using DataFrames
 using CSV
 using EvoTrees
+using EvoTrees: fit
 using Random
 
 working_dir = ""
@@ -67,7 +68,7 @@ x = identity.(x); # to get rid of Union missing
 # I divided titanic_train.csv into training, validation, and test subsets and searched for hyperparameters. 
 
 model_type = "evotrees"
-config = EvoTreeRegressor(loss = :logistic, metric = :logloss,
+config = EvoTreeRegressor(loss = :logloss,
     nrounds = 26,
     max_depth = 15,
     eta = 0.127,
@@ -76,7 +77,7 @@ config = EvoTreeRegressor(loss = :logistic, metric = :logloss,
     alpha = 0.0,
     lambda = 0.0,
     gamma = 2.62);
-model = fit_evotree(config; x_train=x, y_train=y, verbosity=1);
+model = fit(config; x_train=x, y_train=y, verbosity=1);
 
 # -------------------------------------
 # Explanations.
