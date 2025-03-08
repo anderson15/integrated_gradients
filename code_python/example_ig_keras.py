@@ -1,7 +1,7 @@
 
 # Illustrating the use of integrated gradients with Tensorflow via Keras using Titanic data.
 
-# Developed using Python 3.10.9 and Tensorflow 2.10.0.
+# Runs on Python 3.12.9 and TensorFlow 2.18.0
 
 import numpy as np
 import pandas as pd
@@ -74,13 +74,15 @@ for i in range(num_cols):
 
 # I divided titanic_train.csv into training, validation, and test subsets and obtained the following
 # architecture / hyperparameters. 
-model = keras.Sequential()
-model.add(layers.Dense(units=25, input_shape=[num_cols], activation='relu'))
-model.add(layers.Dense(units=10, input_shape=[25], activation='relu'))
-model.add(layers.Dense(units=10, input_shape=[10], activation='relu'))
-model.add(layers.Dense(units=1, input_shape=[10], activation='sigmoid'))
+model = keras.Sequential([
+    layers.Input(shape=(num_cols,)),  
+    layers.Dense(25, activation='relu'),
+    layers.Dense(10, activation='relu'),
+    layers.Dense(10, activation='relu'),
+    layers.Dense(1, activation='sigmoid')
+])
 learn_rate = 0.5
-model.compile(loss=tf.keras.losses.MeanSquaredError(), optimizer=tf.keras.optimizers.legacy.SGD(learning_rate=learn_rate), metrics=['accuracy'])
+model.compile(loss=tf.keras.losses.MeanSquaredError(), optimizer=tf.keras.optimizers.SGD(learning_rate=learn_rate), metrics=['accuracy'])
 model.fit(x_norm, y, epochs=200, batch_size=660, verbose=1, shuffle=True)
 
 # ---------------------------
