@@ -2,6 +2,7 @@
 # Illustrating the use of discrete integrated gradients using Titanic data and XGBoost.
 
 # Developed using Python 3.10.9 and XGBoost 1.51.
+# Confirmed still works on Python 3.12.9 and XGBoost 2.1.1.
 
 import numpy as np
 import pandas as pd
