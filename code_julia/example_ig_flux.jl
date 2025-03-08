@@ -2,6 +2,7 @@
 # Illustrating the use of integrated gradients with Flux.jl using Titanic data.
 
 # Developed using Julia 1.8.5 and Flux 0.13.12.
+# Still runs with Julia 1.11.3 and Flux 0.16.3.
 
 using DataFrames
 using CSV
@@ -79,6 +80,10 @@ for i = 1:num_k
     tmp_std =  std(x_t[i,:]);
     x_t_norm[i,:] = (x_t[i,:] .- tmp_ave) ./ tmp_std;
 end;
+
+# Convert to Float32: 
+x_t_norm = convert(Array{Float32}, x_t_norm);
+y_t = convert(Array{Float32}, y_t);
 
 loader = Flux.DataLoader((x_t_norm, y_t), batchsize=889, shuffle=true);
 
