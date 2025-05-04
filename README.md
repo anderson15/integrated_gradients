@@ -24,7 +24,9 @@ The code is released under the MIT license.
 ## Summary of Method
 Our goal is to explain the difference in a function's value at two distinct points. The method of integrated gradients is based on line integrals. Instead of integrating the function itself, we integrate its gradient. Recall that, by the second fundamental theorem of calculus, the integral of a function's derivative between two points is equal to the difference in the function's value at those two points. Since we want the total change broken down by the contribution of each input variable, we integrate each component of the gradient vector.
 
-I illustrate using a simple function that's amenable to analytic integration: $f(x,y)=x^{2}+x+xy$. Suppose we want to understand the difference in the function's value at the point $(c,d)$, compared to its value at the baseline $(a,b)$. We parameterize the path of integration as: $r(t)=(1-t)\langle a,b\rangle+t\langle c,d\rangle$ for $0\leq t\leq1$, which simplifies to: $r(t)=\langle(1-t)a+tc,(1-t)b+td\rangle$. Thus we have:
+I illustrate using a simple function that's amenable to analytic integration: $f(x,y)=x^{2}+x+xy$. Suppose we want to understand the difference in the function's value at the point $(c,d)$, compared to its value at the baseline $(a,b)$. We parameterize the path of integration as: $r(t)=(1-t)\langle a,b\rangle+t\langle c,d\rangle$ for $0\leq t\leq1$, which simplifies to: $r(t)=\langle(1-t)a+tc,(1-t)b+td\rangle$. 
+
+Thus we have:
 ```math
 \begin{align*}
 x &= (1-t)a+tc \\
