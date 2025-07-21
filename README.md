@@ -68,7 +68,7 @@ As expected, the sum of the two components is equal to the function's total chan
 ## Method for Non-Differentiable Functions
 The idea behind the discrete integrated gradient method is to define a series of points along a vector from the starting point to the end point. At each point along the path, and for each feature, move that feature one step toward the end point while keeping all other features fixed and record the change in the model's prediction. The sum of these changes constitutes the "integrated gradient" for each feature.
 
-More sophisticated finite difference methods are not required (and would generally provide no benefit). Since we're focused on non-differentiable functions, infinitesimal changes in input variables will typically not be associated with any change in the function value.
+More sophisticated finite difference methods are not required and would provide no benefit for the primary use case: tree-based models like XGBoost (or any stepwise function). In these cases, infinitesimal changes in input variables generally do not cause any change in the function value.
 
 Users of the code should be aware of the following approximations. The standard method of integrated gradients uses the actual gradient but approximates the integral. But since the gradient is undefined for non-differentiable functions, the discrete integrated gradient method approximates both the gradient and the integral. Thus, **users should conduct testing if a certain level of precision is needed** (one thing to check is how close the sum of the components is to the difference in function values).
 
